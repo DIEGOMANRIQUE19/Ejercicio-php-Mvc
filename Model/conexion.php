@@ -1,5 +1,6 @@
 <?php
 
+
 class Conexion
 
 {
@@ -12,11 +13,9 @@ class Conexion
     public function __construct()
     {
         try{
-            $this->con = new PDO("mysql:dbname=$this->host->$this->database;host=$this->host",this->user,$this->pass);
-            $this->con->setAttribute(PDO:ATTR_ERRMODE,
-            PDO::ERRMODE_EXCEPTION);
+            PDO::ERRMODE_EXCEPTION;
         }
-        catch {PDOException $e} 
+        catch (PDOException $e)
         {
             echo "Error" . $e->getCode(); 
         }
